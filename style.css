@@ -155,4 +155,27 @@ body {
     .title {
         font-size: 40px;
     }
+
+    body {
+        overflow-x      : auto;
+        overflow-y      : hidden;
+        transform       : rotate(-90deg);
+        transform-origin: left top;
+        height          : 100vw;
+        /* Use viewport width for height */
+        width           : 100vh;
+        /* Use viewport height for width */
+        position        : absolute;
+        top             : 100%;
+        left            : 0;
+    }
+
+    .container {
+        display        : flex;
+        flex-direction : column;
+        width          : 100vw;
+        height         : 100vh;
+        align-items    : center;
+        justify-content: center;
+    }
 }
