@@ -112,6 +112,10 @@ body {
     background-position: center center;
 }
 
+.characters-item:focus {
+    outline: none;
+}
+
 .characters-item .characters-img {
     transition: transform 0.3s ease-in-out;
 }
@@ -172,6 +176,8 @@ body {
 .modal-closebtn:active {
     transform: scale(0.95);
 }
+
+
 
 .overlay {
     position        : fixed;
