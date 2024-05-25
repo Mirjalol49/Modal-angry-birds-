@@ -1,78 +1,44 @@
-/* FONTS */
-@font-face {
-    font-family: "Feast of Flesh";
-    src        : url('./fonts/FeastOfFleshBb-AVm.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: "Feast of Flesh";
-    src        : url('./fonts/FeastOfFleshBbItalic-qr0.ttf') format('truetype');
-}
-
-* {
-    box-sizing: border-box;
-}
-
-/* GENERAL */
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-html {
-    height    : 100%;
-    box-sizing: border-box;
-}
-
-img {
-    display: block;
-    height : auto;
-}
-
+/* General styles for horizontal view */
 body {
-    display         : flex;
-    flex-direction  : column;
-    height          : 100%;
-    margin          : 0;
-    padding         : 0;
-    font-family     : "Feast of Flesh", Arial, sans-serif;
-    background-color: #16172C;
-    scroll-behavior : smooth;
+    transform       : rotate(90deg);
+    transform-origin: top left;
+    width           : 100vh;
+    height          : 100vw;
+    overflow-x      : hidden;
+    position        : absolute;
+    top             : 100%;
+    left            : 0;
 }
 
-/* Disable scrolling when modal is open */
-body.modal-open {
-    overflow: hidden;
-}
-
-/* CONTAINER */
+/* Container */
 .container {
-    width        : 100%;
-    max-width    : 1400px;
-    margin-right : auto;
-    margin-left  : auto;
-    padding-right: 20px;
-    padding-left : 20px;
+    display       : flex;
+    flex-direction: row;
+    width         : 100vh;
+    /* Since the body is rotated, we use vh here */
+    height        : 100vw;
+    /* Use vw here because height is now the width */
+    overflow-y    : auto;
 }
 
-/* STICKY-FOOTER */
-.site-main {
-    flex-grow: 1;
-}
-
+/* Modal */
 .hidden {
     display: none;
 }
 
-.title {
-    text-align    : center;
-    color         : #fff;
-    font-family   : "Feast of Flesh";
-    letter-spacing: 5px;
-    font-size     : 60px;
+/* Overlay */
+.overlay {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter : blur(3px);
+    z-index         : 5;
 }
 
+/* Characters list and items */
 .characters-list {
     padding        : 0;
     display        : flex;
@@ -130,6 +96,7 @@ body.modal-open {
     padding         : 8px;
 }
 
+/* Modal content */
 .modal {
     position        : fixed;
     top             : 50%;
@@ -169,18 +136,7 @@ body.modal-open {
     transform: scale(0.95);
 }
 
-.overlay {
-    position        : fixed;
-    top             : 0;
-    left            : 0;
-    width           : 100%;
-    height          : 100vh;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter : blur(3px);
-    z-index         : 5;
-}
-
-/* MEDIA QUERIES */
+/* Media queries */
 @media screen and (max-width: 500px) {
     .characters-list {
         display       : flex;

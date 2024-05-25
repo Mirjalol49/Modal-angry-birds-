@@ -10,7 +10,6 @@ const closeBtn = document.querySelector(".modal-closebtn");
 function closeModal() {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
-  document.body.classList.remove("modal-open");
 }
 
 // Open function
@@ -19,7 +18,6 @@ function openModal(name, content) {
   modalContent.textContent = content;
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
-  document.body.classList.add("modal-open");
 }
 
 // Loop through each character item
@@ -33,3 +31,13 @@ itemElements.forEach((item) => {
 // Close modal when overlay or close button is clicked
 overlay.addEventListener("click", closeModal);
 closeBtn.addEventListener("click", closeModal);
+
+// Adjust viewport height for mobile devices
+function adjustViewport() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+}
+
+window.addEventListener("resize", adjustViewport);
+window.addEventListener("orientationchange", adjustViewport);
+adjustViewport();
