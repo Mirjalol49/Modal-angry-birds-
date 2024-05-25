@@ -23,7 +23,6 @@
 html {
     height    : 100%;
     box-sizing: border-box;
-
 }
 
 img {
@@ -42,18 +41,9 @@ body {
     scroll-behavior : smooth;
 }
 
-/* VISUALLY-HIDDEN */
-.visually-hidden {
-    position   : absolute;
-    width      : 1px;
-    height     : 1px;
-    margin     : -1px;
-    padding    : 0;
-    border     : 0;
-    white-space: nowrap;
-    clip-path  : inset(100%);
-    clip       : rect(0 0 0 0);
-    overflow   : hidden;
+/* Disable scrolling when modal is open */
+body.modal-open {
+    overflow: hidden;
 }
 
 /* CONTAINER */
@@ -179,8 +169,6 @@ body {
     transform: scale(0.95);
 }
 
-
-
 .overlay {
     position        : fixed;
     top             : 0;
@@ -192,14 +180,11 @@ body {
     z-index         : 5;
 }
 
-
 /* MEDIA QUERIES */
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
     .characters-list {
         display       : flex;
         flex-direction: column;
-
-
     }
 
     .characters-item {
@@ -209,7 +194,6 @@ body {
     .logo {
         width : 200px;
         height: auto;
-
     }
 
     .title {

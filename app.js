@@ -10,6 +10,7 @@ const closeBtn = document.querySelector(".modal-closebtn");
 function closeModal() {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
+  document.body.classList.remove("modal-open");
 }
 
 // Open function
@@ -18,6 +19,7 @@ function openModal(name, content) {
   modalContent.textContent = content;
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
+  document.body.classList.add("modal-open");
 }
 
 // Loop through each character item
